@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
     <title>JQuery Game</title>
 </head>
 <body>
@@ -28,11 +30,11 @@
         </div> 
         <div class="row">
             <div class="col-md-3" id=random-number>
-                <h1>Number</h1>
+                <h1 id=rdm-number></h1>
             </div>
             <div class="col-md-2" id=wins-losses>
-                    <h3>Wins:</h3><br>
-                    <h3>Losses:</h3>
+                    <h3 id=wins>Wins:</h3><br>
+                    <h3 id=losses>Losses:</h3>
             </div>
          </div>    
          <div class="row" id=images>
