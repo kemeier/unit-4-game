@@ -3,10 +3,9 @@ $(document).ready(function () {
     var randomNumberHeading = $("#rdm-number");
     var winsHeading = $("#wins");
     var lossesHeading = $("#losses");
-    var pointsHeading = $("#points");
-    var images = $("#images");
+    var pointsHeading = $("#point-value");
 
-   
+
     var wins = 0;
     var losses = 0;
     var points = 0;
@@ -27,27 +26,88 @@ $(document).ready(function () {
     var monkeyNumber = monkey[Math.floor(Math.random()*monkey.length)];
     console.log(monkeyNumber);
 
-    var monkeyNumber = bunny[Math.floor(Math.random()*monkey.length)];
+    var bunnyNumber = bunny[Math.floor(Math.random()*monkey.length)];
     console.log(monkeyNumber);
 
-    $("#rdm-number").text(randomNumber);
-   
+    $("#rdm-number").text("Goal:  " + randomNumber);
+    $("#point-value").text(points);
+    $("#wins").text(wins);
+    $("#losses").text(losses);
+
+
+
+    var checker = function()    {
+        
+        if (points > randomNumber)  {
+            alert("You lost, sucker!");
+
+            losses++;
+
+            $("#losses").text(losses);
+
+            resetGame();
+        }
+        else if (points===randomNumber) {
+            alert("Congrats, you won!");
+
+            wins++;
+
+            $("#wins").text(wins);
+
+            resetGame();
+        }
+    }
+
+
+    
+    $("#bunny").attr("value", bunnyNumber);
+
+    $("#bunny").on("click", function()   {
+        points += parseInt(this.value);
+        $("#point-value").text(points);
+        console.log(points)
+        $("#bunny").attr("value", bunnyNumber);
+        checker();
+    });
+
+    $("#fish").attr("value", fishNumber);
+
+    $("#fish").on("click", function()   {
+        points += parseInt(this.value);
+        $("#point-value").text(points);
+        console.log(points)
+        $("#fish").attr("value", fishNumber);
+        checker();
+    });
+
     
 
     function resetGame()   {
 
-    wins = 0;
-    losses = 0;
     points = 0;
+    randomNumber = (Math.floor(Math.random() * 102) + 19);
+    console.log(randomNumber);
+
+    fishNumber = fish[Math.floor(Math.random()*fish.length)];
+    console.log(fishNumber);
+
+    porcupineNumber = porcupine[Math.floor(Math.random()*porcupine.length)];
+    console.log(porcupineNumber);
+
+    monkeyNumber = monkey[Math.floor(Math.random()*monkey.length)];
+    console.log(monkeyNumber);
+
+    bunnyNumber = bunny[Math.floor(Math.random()*monkey.length)];
+    console.log(monkeyNumber);
+
+    randomNumberHeading = $("#rdm-number");
+    winsHeading = $("#wins");
+    lossesHeading = $("#losses");
+    pointsHeading = $("#point-value");
+
     
-    
-   
-    winsHeading.text("");
-    lossesHeading.text("");
-    pointsHeading.text("");
+
 
     }
-
-
 
 });
