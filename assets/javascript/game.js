@@ -17,16 +17,16 @@ $(document).ready(function () {
     var randomNumber = (Math.floor(Math.random() * 102) + 19);
     console.log(randomNumber);
 
-    var fishNumber = fish[Math.floor(Math.random()*fish.length)];
+    var fishNumber = fish[Math.floor(Math.random() * fish.length)];
     console.log(fishNumber);
 
-    var porcupineNumber = porcupine[Math.floor(Math.random()*porcupine.length)];
+    var porcupineNumber = porcupine[Math.floor(Math.random() * porcupine.length)];
     console.log(porcupineNumber);
 
-    var monkeyNumber = monkey[Math.floor(Math.random()*monkey.length)];
+    var monkeyNumber = monkey[Math.floor(Math.random() * monkey.length)];
     console.log(monkeyNumber);
 
-    var bunnyNumber = bunny[Math.floor(Math.random()*monkey.length)];
+    var bunnyNumber = bunny[Math.floor(Math.random() * monkey.length)];
     console.log(monkeyNumber);
 
     $("#rdm-number").text("Goal:  " + randomNumber);
@@ -36,9 +36,9 @@ $(document).ready(function () {
 
 
 
-    var checker = function()    {
-        
-        if (points > randomNumber)  {
+    var checker = function () {
+
+        if (points > randomNumber) {
             alert("You lost, sucker!");
 
             losses++;
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
             resetGame();
         }
-        else if (points===randomNumber) {
+        else if (points === randomNumber) {
             alert("Congrats, you won!");
 
             wins++;
@@ -59,10 +59,10 @@ $(document).ready(function () {
     }
 
 
-    
+
     $("#bunny").attr("value", bunnyNumber);
 
-    $("#bunny").on("click", function()   {
+    $("#bunny").on("click", function () {
         points += parseInt(this.value);
         $("#point-value").text(points);
         console.log(points)
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     $("#fish").attr("value", fishNumber);
 
-    $("#fish").on("click", function()   {
+    $("#fish").on("click", function () {
         points += parseInt(this.value);
         $("#point-value").text(points);
         console.log(points)
@@ -82,49 +82,49 @@ $(document).ready(function () {
 
     $("#porcupine").attr("value", porcupineNumber);
 
-    $("#porcupine").on("click", function()   {
+    $("#porcupine").on("click", function () {
         points += parseInt(this.value);
         $("#point-value").text(points);
         console.log(points)
         $("#porcupine").attr("value", porcupineNumber);
         checker();
     });
-    
+
     $("#monkey").attr("value", monkeyNumber);
 
-    $("#monkey").on("click", function()   {
+    $("#monkey").on("click", function () {
         points += parseInt(this.value);
         $("#point-value").text(points);
         console.log(points)
         $("#monkey").attr("value", monkeyNumber);
         checker();
     });
-    
 
-    function resetGame()   {
 
-    points = 0;
-    randomNumber = (Math.floor(Math.random() * 102) + 19);
-    console.log(randomNumber);
+    function resetGame() {
 
-    fishNumber = fish[Math.floor(Math.random()*fish.length)];
-    console.log(fishNumber);
+        points = 0;
+        randomNumber = (Math.floor(Math.random() * 102) + 19);
+        console.log(randomNumber);
 
-    porcupineNumber = porcupine[Math.floor(Math.random()*porcupine.length)];
-    console.log(porcupineNumber);
+        fishNumber = fish[Math.floor(Math.random() * fish.length)];
+        console.log(fishNumber);
 
-    monkeyNumber = monkey[Math.floor(Math.random()*monkey.length)];
-    console.log(monkeyNumber);
+        porcupineNumber = porcupine[Math.floor(Math.random() * porcupine.length)];
+        console.log(porcupineNumber);
 
-    bunnyNumber = bunny[Math.floor(Math.random()*monkey.length)];
-    console.log(monkeyNumber);
+        monkeyNumber = monkey[Math.floor(Math.random() * monkey.length)];
+        console.log(monkeyNumber);
 
-    randomNumberHeading = $("#rdm-number");
-    winsHeading = $("#wins");
-    lossesHeading = $("#losses");
-    pointsHeading = $("#point-value");
+        bunnyNumber = bunny[Math.floor(Math.random() * monkey.length)];
+        console.log(monkeyNumber);
 
-    
+        randomNumberHeading = $("#rdm-number");
+        winsHeading = $("#wins");
+        lossesHeading = $("#losses");
+        $("#point-value").text(points);
+
+
 
 
     }
