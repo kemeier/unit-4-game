@@ -119,7 +119,7 @@ $(document).ready(function () {
         bunnyNumber = bunny[Math.floor(Math.random() * monkey.length)];
         console.log(monkeyNumber);
 
-        randomNumberHeading = $("#rdm-number");
+        $("#rdm-number").text(randomNumber);
         winsHeading = $("#wins");
         lossesHeading = $("#losses");
         $("#point-value").text(points);
