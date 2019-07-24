@@ -80,6 +80,25 @@ $(document).ready(function () {
         checker();
     });
 
+    $("#porcupine").attr("value", porcupineNumber);
+
+    $("#porcupine").on("click", function()   {
+        points += parseInt(this.value);
+        $("#point-value").text(points);
+        console.log(points)
+        $("#porcupine").attr("value", porcupineNumber);
+        checker();
+    });
+    
+    $("#monkey").attr("value", monkeyNumber);
+
+    $("#monkey").on("click", function()   {
+        points += parseInt(this.value);
+        $("#point-value").text(points);
+        console.log(points)
+        $("#monkey").attr("value", monkeyNumber);
+        checker();
+    });
     
 
     function resetGame()   {
